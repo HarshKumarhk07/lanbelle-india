@@ -1,0 +1,31 @@
+import type { Metadata } from "next";
+import { Hero } from "@/components/home/hero";
+import { CategorySection } from "@/components/home/category-section";
+import { FeaturedProducts } from "@/components/home/featured-products";
+import { WhyChooseUs } from "@/components/home/why-choose-us";
+import { ShippingTimeline } from "@/components/home/shipping-timeline";
+import { Testimonials } from "@/components/home/testimonials";
+import { InstagramSection } from "@/components/home/instagram-section";
+import { NewsletterCta } from "@/components/home/newsletter-cta";
+import { siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: `${siteConfig.name} — ${siteConfig.tagline}`,
+  description: siteConfig.description,
+  alternates: { canonical: "/" },
+};
+
+export default function HomePage() {
+  return (
+    <>
+      <Hero />
+      <CategorySection />
+      <FeaturedProducts />
+      <WhyChooseUs />
+      <ShippingTimeline />
+      <Testimonials />
+      <InstagramSection />
+      <NewsletterCta />
+    </>
+  );
+}

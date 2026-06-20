@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm -v)",
+      "Bash(npm install *)",
+      "Bash(node -e \"console.log\\('next', require\\('next/package.json'\\).version\\)\")",
+      "Bash(npm run *)",
+      "Read(//c/Users/harsh/.claude/projects/d--Avani-Projects-lanbel-india/memory/**)",
+      "Bash(ls MEMORY.md)",
+      "Bash(node -e ' *)",
+      "Bash(sed -i 's/Stagger\\\\.Item/StaggerItem/g' category-section.tsx instagram-section.tsx shipping-timeline.tsx testimonials.tsx why-choose-us.tsx)",
+      "Bash(sed -i 's/import { Stagger } from \"@\\\\/components\\\\/motion\\\\/reveal\";/import { Stagger, StaggerItem } from \"@\\\\/components\\\\/motion\\\\/reveal\";/' category-section.tsx instagram-section.tsx why-choose-us.tsx)",
+      "Bash(sed -i 's/import { Reveal, Stagger } from \"@\\\\/components\\\\/motion\\\\/reveal\";/import { Reveal, Stagger, StaggerItem } from \"@\\\\/components\\\\/motion\\\\/reveal\";/' shipping-timeline.tsx)",
+      "Bash(sed -i 's/import { Stagger, Reveal } from \"@\\\\/components\\\\/motion\\\\/reveal\";/import { Stagger, Reveal, StaggerItem } from \"@\\\\/components\\\\/motion\\\\/reveal\";/' testimonials.tsx)",
+      "Bash(npx tsc *)"
+    ]
+  }
+}
