@@ -87,7 +87,7 @@ export function ShopSidebar({ categories, brands }: ShopSidebarProps) {
         <div className="space-y-2.5">
           {categories.map((c) => (
             <Checkbox
-              key={c.slug}
+              key={c.id || c.slug || c.name}
               label={c.name}
               count={c.productCount}
               checked={selectedCategories.includes(c.slug)}
@@ -103,7 +103,7 @@ export function ShopSidebar({ categories, brands }: ShopSidebarProps) {
         <div className="space-y-2.5">
           {brands.map((b) => (
             <Checkbox
-              key={b.slug}
+              key={b.id || b.slug || b.name}
               label={b.name}
               checked={selectedBrands.includes(b.slug)}
               onChange={() => toggleMulti("brand", b.slug, selectedBrands)}

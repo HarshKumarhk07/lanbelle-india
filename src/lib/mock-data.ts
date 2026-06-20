@@ -15,123 +15,33 @@ const img = (seed: string) =>
 export const featuredProducts: DisplayProduct[] = [
   {
     id: "p1",
-    slug: "snail-mucin-repair-serum",
-    name: "Snail Mucin 96% Repair Serum",
-    brand: "COSRX",
-    category: "Serums",
-    categorySlug: "serums",
-    price: 1299,
-    mrp: 1799,
+    slug: "natural-deep-cleansing-oil",
+    name: "Natural Deep Cleansing Oil",
+    brand: "Lanbelle",
+    category: "Cleansers",
+    categorySlug: "cleansers",
+    price: 1999,
+    mrp: 2499,
     rating: 4.9,
-    reviewCount: 2841,
-    image: img("lanbel-serum-1"),
+    reviewCount: 128,
+    image: "/natural deep cleansing oil.webp",
     badges: ["best", "featured"],
-    stock: 42,
+    stock: 50,
   },
   {
     id: "p2",
-    slug: "rice-glow-deep-cleanser",
-    name: "Rice Glow Deep Cleansing Foam",
-    brand: "Beauty of Joseon",
-    category: "Cleansers",
-    categorySlug: "cleansers",
-    price: 899,
-    mrp: 1199,
+    slug: "lanbelle-vita-energy-blemish-clear-ampoule",
+    name: "Vita Energy Blemish Clear Ampoule",
+    brand: "Lanbelle",
+    category: "Serums",
+    categorySlug: "serums",
+    price: 2499,
+    mrp: 2999,
     rating: 4.8,
-    reviewCount: 1577,
-    image: img("lanbel-cleanser-1"),
+    reviewCount: 96,
+    image: "/Lanbelle vita energy blemish clear ampoule.webp",
     badges: ["trending"],
-    stock: 60,
-  },
-  {
-    id: "p3",
-    slug: "relief-sun-rice-probiotics-spf50",
-    name: "Relief Sun: Rice + Probiotics SPF50+",
-    brand: "Beauty of Joseon",
-    category: "Sunscreens",
-    categorySlug: "sunscreens",
-    price: 1099,
-    mrp: 1399,
-    rating: 4.9,
-    reviewCount: 3920,
-    image: img("lanbel-sun-1"),
-    badges: ["best"],
-    stock: 25,
-  },
-  {
-    id: "p4",
-    slug: "green-tea-balancing-toner",
-    name: "Green Tea Balancing Toner",
-    brand: "Innisfree",
-    category: "Toners",
-    categorySlug: "toners",
-    price: 999,
-    mrp: 1299,
-    rating: 4.7,
-    reviewCount: 1043,
-    image: img("lanbel-toner-1"),
-    badges: ["new"],
-    stock: 38,
-  },
-  {
-    id: "p5",
-    slug: "ceramide-barrier-moisturizer",
-    name: "Ceramide Barrier Cream",
-    brand: "Dr.Jart+",
-    category: "Moisturizers",
-    categorySlug: "moisturizers",
-    price: 1599,
-    mrp: 2099,
-    rating: 4.8,
-    reviewCount: 876,
-    image: img("lanbel-moist-1"),
-    badges: ["featured"],
-    stock: 19,
-  },
-  {
-    id: "p6",
-    slug: "honey-overnight-lip-mask",
-    name: "Honey Overnight Lip Sleeping Mask",
-    brand: "LANEIGE",
-    category: "Lip Care",
-    categorySlug: "lip-care",
-    price: 1349,
-    mrp: 1699,
-    rating: 4.9,
-    reviewCount: 5120,
-    image: img("lanbel-lip-1"),
-    badges: ["best", "trending"],
-    stock: 7,
-  },
-  {
-    id: "p7",
-    slug: "centella-soothing-sheet-mask",
-    name: "Centella Soothing Sheet Mask (10pk)",
-    brand: "Mediheal",
-    category: "Face Masks",
-    categorySlug: "face-masks",
-    price: 1199,
-    mrp: 1599,
-    rating: 4.6,
-    reviewCount: 642,
-    image: img("lanbel-mask-1"),
-    badges: ["new"],
-    stock: 54,
-  },
-  {
-    id: "p8",
-    slug: "perfect-hair-fill-up-treatment",
-    name: "Perfect Hair Fill-Up Treatment",
-    brand: "Mise en Scène",
-    category: "Hair Care",
-    categorySlug: "hair-care",
-    price: 749,
-    mrp: 999,
-    rating: 4.7,
-    reviewCount: 388,
-    image: img("lanbel-hair-1"),
-    badges: ["trending"],
-    stock: 31,
+    stock: 35,
   },
 ];
 
@@ -149,55 +59,30 @@ export const testimonials: Testimonial[] = [
     id: "t1",
     name: "Ananya Sharma",
     location: "Mumbai",
-    service: "Snail Mucin Serum + Toner",
+    service: "Natural Deep Cleansing Oil",
     rating: 5,
     quote:
-      "Genuinely the real deal — sealed Korean packaging and my skin has never looked this clear. Shipping took two weeks but completely worth the wait.",
+      "Genuinely the real deal — my skin has never looked this clear after double cleansing. Lanbelle's cleansing oil is amazing.",
   },
   {
     id: "t2",
     name: "Priya Nair",
     location: "Bangalore",
-    service: "Relief Sun SPF50+",
+    service: "Vita Energy Blemish Clear Ampoule",
     rating: 5,
     quote:
-      "No white cast, no stickiness — exactly the sunscreen I couldn’t find locally. Lanbel’s authenticity guarantee made me finally trust an online K-beauty store.",
-  },
-  {
-    id: "t3",
-    name: "Riya Kapoor",
-    location: "Delhi",
-    service: "Lip Sleeping Mask",
-    rating: 5,
-    quote:
-      "Wrapped beautifully, original batch codes, and customer support kept me updated through customs. My whole routine is from Lanbel now.",
-  },
-  {
-    id: "t4",
-    name: "Sneha Reddy",
-    location: "Hyderabad",
-    service: "Ceramide Barrier Cream",
-    rating: 5,
-    quote:
-      "My sensitive skin finally calmed down. Loved that they explain the ingredients and how to layer everything. Will reorder for sure.",
+      "The blemish clear ampoule faded my dark spots in just two weeks! Truly premium Korean quality, imported directly.",
   },
 ];
 
 export const instagramPosts = Array.from({ length: 6 }, (_, i) => ({
   id: `ig-${i + 1}`,
   image: `https://picsum.photos/seed/lanbel-ig-${i + 1}/500/500`,
-  href: "https://instagram.com/lanbel",
+  href: "https://instagram.com/lanbelle",
 }));
 
 export const brandLogos = [
-  "COSRX",
-  "Beauty of Joseon",
-  "LANEIGE",
-  "Innisfree",
-  "Dr.Jart+",
-  "Mediheal",
-  "SKIN1004",
-  "Anua",
+  "Lanbelle",
 ];
 
 /** Brand filter options derived from the mock catalog. */
@@ -214,31 +99,47 @@ export const mockProducts = featuredProducts;
 export function findMockProduct(slug: string): ProductDetailDTO | null {
   const card = mockProducts.find((p) => p.slug === slug);
   if (!card) return null;
+
+  const isCleansingOil = slug === "natural-deep-cleansing-oil";
+
   return {
     ...card,
     sku: card.id.toUpperCase(),
     brandSlug: slugify(card.brand),
-    description: `${card.name} is an authentic Korean formulation by ${card.brand}, imported in original sealed packaging. Crafted for visibly healthier, glass-skin results, it layers effortlessly into any routine.`,
-    shortDescription: `Authentic ${card.brand} ${card.category.toLowerCase()} for a healthy, radiant glow.`,
-    images: [
-      { url: card.image, alt: card.name },
-      { url: card.image.replace(/\/\d+\/\d+$/, "/641/761"), alt: `${card.name} alternate` },
-    ],
-    ingredients: [
-      "Aqua (Water)",
-      "Niacinamide",
-      "Sodium Hyaluronate",
-      "Panthenol",
-      "Centella Asiatica Extract",
-    ],
-    howToUse: [
-      "Cleanse and tone your skin.",
-      `Apply ${card.name} gently to the face and neck.`,
-      "Follow with moisturizer and SPF in the morning.",
-    ],
-    benefits: ["Deep hydration", "Strengthens skin barrier", "Visible glow"],
+    description: isCleansingOil 
+      ? "A premium all-natural deep cleansing oil that effectively removes makeup, sebum, and impurities while maintaining skin moisture. Formulated with natural botanical oils like grape seed oil and macadamia seed oil for a nourished and fresh finish."
+      : "A concentrated brightening ampoule formulated to target blemishes, dark spots, and uneven skin tone. Drenched in vitamins to vitalize skin barrier and reveal a radiant, translucent glass-skin complexion.",
+    shortDescription: isCleansingOil
+      ? "100% natural oils for a gentle but deep cleanse."
+      : "Vitamin-rich ampoule to clear blemishes and brighten skin.",
+    images: isCleansingOil
+      ? [
+          { url: "/natural deep cleansing oil.webp", alt: "Lanbelle Natural Deep Cleansing Oil" },
+          { url: "/LANBELLE Natural Deep Cleansing Oil 200ml Korea Beauty Made in Korea.jpg", alt: "Lanbelle Natural Deep Cleansing Oil 200ml" },
+        ]
+      : [
+          { url: "/Lanbelle vita energy blemish clear ampoule.webp", alt: "Lanbelle Vita Energy Blemish Clear Ampoule" },
+        ],
+    ingredients: isCleansingOil
+      ? ["Grape Seed Oil", "Macadamia Seed Oil", "Lemon Peel Oil", "Lavender Oil", "Eucalyptus Leaf Oil"]
+      : ["Sea Buckthorn Extract", "Niacinamide", "Panthenol", "Ascorbic Acid", "Adenosine"],
+    howToUse: isCleansingOil
+      ? [
+          "Pump an appropriate amount onto dry hands.",
+          "Gently massage onto dry face to melt away makeup and impurities.",
+          "Add water to emulsify and massage.",
+          "Rinse thoroughly with lukewarm water."
+        ]
+      : [
+          "After cleansing and toning, apply 2–3 drops to the face.",
+          "Gently pat into the skin until fully absorbed.",
+          "Follow with your favorite moisturizer."
+        ],
+    benefits: isCleansingOil
+      ? ["Gentle deep cleansing", "Pore care & sebum control", "Keeps skin moisturized"]
+      : ["Fades blemishes & dark spots", "Brightens skin tone", "Improves skin elasticity"],
     skinTypes: ["all", "sensitive", "dry"],
-    volume: "100ml",
+    volume: isCleansingOil ? "200ml" : "50ml",
     countryOfOrigin: "South Korea",
     discountPercent:
       card.mrp > card.price

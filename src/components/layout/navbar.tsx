@@ -51,10 +51,8 @@ export function Navbar() {
       <div className="container-px mx-auto max-w-7xl pt-3">
         <nav
           className={cn(
-            "flex h-16 items-center justify-between gap-4 rounded-full border px-3 pl-5 transition-all duration-300",
-            scrolled
-              ? "glass border-border shadow-lift"
-              : "border-transparent bg-background/40 backdrop-blur-sm",
+            "flex h-16 items-center justify-between gap-4 rounded-full border px-3 pl-5 transition-all duration-300 bg-background border-border",
+            scrolled ? "shadow-lift" : "shadow-soft",
           )}
         >
           <Logo />

@@ -31,7 +31,9 @@ export function Logo({ className, href = "/", invert = false }: LogoProps) {
             sizes="128px"
             className={cn(
               "object-contain transition-transform duration-300 group-hover:scale-105",
-              invert ? "invert brightness-200" : "dark:invert"
+              invert 
+                ? "invert brightness-200 mix-blend-screen" 
+                : "mix-blend-multiply dark:invert dark:mix-blend-screen"
             )}
             priority
           />
