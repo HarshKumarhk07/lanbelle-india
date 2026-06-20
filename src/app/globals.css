@@ -262,6 +262,8 @@
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    padding-right: 0.12em;
+    margin-right: -0.12em;
   }
 
   .shimmer {
