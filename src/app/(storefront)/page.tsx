@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Hero } from "@/components/home/hero";
 import { CategorySection } from "@/components/home/category-section";
-import { FeaturedProducts } from "@/components/home/featured-products";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { ShippingTimeline } from "@/components/home/shipping-timeline";
 import { Testimonials } from "@/components/home/testimonials";
@@ -19,7 +18,6 @@ export default function HomePage() {
     <>
       <Hero />
       <CategorySection />
-      <FeaturedProducts />
       <WhyChooseUs />
       <ShippingTimeline />
       <Testimonials />

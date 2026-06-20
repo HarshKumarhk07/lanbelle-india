@@ -25,7 +25,7 @@ export default function AuthLayout({
           aria-hidden
           className="pointer-events-none absolute -bottom-20 -right-10 size-80 rounded-full bg-gold/20 blur-3xl"
         />
-        <Logo className="relative [&_span:last-child]:text-cream" />
+        <Logo invert className="relative" />
 
         <div className="relative">
           <h1 className="max-w-md font-serif text-4xl font-semibold leading-tight">
