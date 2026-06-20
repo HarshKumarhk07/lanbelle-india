@@ -51,9 +51,7 @@ export default function AuthLayout({
       {/* Form panel */}
       <div className="flex flex-col px-5 py-8 sm:px-10">
         <div className="flex items-center justify-between">
-          <Link href="/" className="lg:hidden">
-            <Logo />
-          </Link>
+          <Logo className="lg:hidden" />
           <Link
             href="/"
             className="ml-auto inline-flex items-center gap-1.5 text-sm text-muted-foreground transition hover:text-foreground"
