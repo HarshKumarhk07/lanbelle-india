@@ -5,7 +5,6 @@ import { FeaturedProducts } from "@/components/home/featured-products";
 import { WhyChooseUs } from "@/components/home/why-choose-us";
 import { ShippingTimeline } from "@/components/home/shipping-timeline";
 import { Testimonials } from "@/components/home/testimonials";
-import { InstagramSection } from "@/components/home/instagram-section";
 import { NewsletterCta } from "@/components/home/newsletter-cta";
 import { siteConfig } from "@/lib/site-config";
 
@@ -24,7 +23,6 @@ export default function HomePage() {
       <WhyChooseUs />
       <ShippingTimeline />
       <Testimonials />
-      <InstagramSection />
       <NewsletterCta />
     </>
   );

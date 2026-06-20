@@ -12,20 +12,20 @@ import {
 
 /** Single source of truth for brand identity, navigation and taxonomy. */
 export const siteConfig = {
-  name: "Lanbel",
+  name: "Lanbelle",
   tagline: "Korean skincare, delivered to your door",
   description:
-    "Lanbel brings 100% authentic Korean skincare and cosmetics imported directly from South Korea — original brand packaging, secure payments, and worldwide-quality glow at your doorstep.",
+    "Lanbelle brings 100% authentic Korean skincare and cosmetics imported directly from South Korea — original brand packaging, secure payments, and worldwide-quality glow at your doorstep.",
   url: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
   ogImage: "/og.jpg",
-  email: "care@lanbel.com",
+  email: "care@lanbelle.com",
   phone: "+91 98765 43210",
   address: "Seoul · Mumbai · Delhi",
   social: {
-    instagram: "https://instagram.com/lanbel",
-    facebook: "https://facebook.com/lanbel",
-    youtube: "https://youtube.com/@lanbel",
-    pinterest: "https://pinterest.com/lanbel",
+    instagram: "https://instagram.com/lanbelle",
+    facebook: "https://facebook.com/lanbelle",
+    youtube: "https://youtube.com/@lanbelle",
+    pinterest: "https://pinterest.com/lanbelle",
   },
 } as const;
 
@@ -59,46 +59,10 @@ export const categories: CategoryDef[] = [
     icon: Droplets,
   },
   {
-    slug: "toners",
-    name: "Toners",
-    description: "Hydrating essences that balance & prep skin.",
-    icon: FlaskConical,
-  },
-  {
     slug: "serums",
     name: "Serums",
     description: "Targeted actives for glow, firmness & clarity.",
     icon: Sparkles,
-  },
-  {
-    slug: "moisturizers",
-    name: "Moisturizers",
-    description: "Lightweight creams that lock in lasting moisture.",
-    icon: Layers,
-  },
-  {
-    slug: "sunscreens",
-    name: "Sunscreens",
-    description: "Daily SPF that protects without the white cast.",
-    icon: Sun,
-  },
-  {
-    slug: "face-masks",
-    name: "Face Masks",
-    description: "Sheet & wash-off masks for an instant reset.",
-    icon: Smile,
-  },
-  {
-    slug: "lip-care",
-    name: "Lip Care",
-    description: "Sleeping masks & tints for soft, plush lips.",
-    icon: HeartPulse,
-  },
-  {
-    slug: "hair-care",
-    name: "Hair Care",
-    description: "Scalp & strand rituals for healthy shine.",
-    icon: Scissors,
   },
 ];
 
@@ -118,7 +82,7 @@ export const footerNav = {
     { label: "FAQs", href: "/faqs" },
   ],
   company: [
-    { label: "About Lanbel", href: "/about" },
+    { label: "About Lanbelle", href: "/about" },
     { label: "Authenticity Promise", href: "/about#authenticity" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
