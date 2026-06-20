@@ -12,36 +12,53 @@ export const metadata: Metadata = {
 };
 
 export default async function BestSellersPage() {
-  const { items } = await getShopProducts({
-    flag: "bestSeller",
-    sort: "popular",
-    limit: 24,
-  });
+  try {
+    const { items } = await getShopProducts({
+      flag: "bestSeller",
+      sort: "popular",
+      limit: 24,
+    });
 
-  return (
-    <div className="container-px mx-auto max-w-7xl py-16">
-      <PageHeader
-        eyebrow="Top booked"
-        title="Best sellers"
-        description="Hand-picked favourites our community keeps coming back for — all authentic, all imported from Korea."
-      />
+    return (
+      <div className="container-px mx-auto max-w-7xl py-16">
+        <PageHeader
+          eyebrow="Top booked"
+          title="Best sellers"
+          description="Hand-picked favourites our community keeps coming back for — all authentic, all imported from Korea."
+        />
 
-      {items.length === 0 ? (
-        <div className="mt-12 text-center">
-          <p className="text-sm text-muted-foreground">
-            Best sellers will appear here soon.
+        {items.length === 0 ? (
+          <div className="mt-12 text-center">
+            <p className="text-sm text-muted-foreground">
+              Best sellers will appear here soon.
+            </p>
+            <Button asChild className="mt-4">
+              <Link href="/shop">Browse all products</Link>
+            </Button>
+          </div>
+        ) : (
+          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+            {items.map((product, i) => (
+              <ProductCard key={product.id} product={product} index={i} />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  } catch (error) {
+    return (
+      <div className="container-px mx-auto max-w-7xl py-16">
+        <PageHeader
+          eyebrow="Top booked"
+          title="Best sellers"
+          description="Hand-picked favourites our community keeps coming back for — all authentic, all imported from Korea."
+        />
+        <div className="mt-12 text-center py-8">
+          <p className="text-sm text-destructive font-medium">
+            Failed to load products. Please try again later.
           </p>
-          <Button asChild className="mt-4">
-            <Link href="/shop">Browse all products</Link>
-          </Button>
         </div>
-      ) : (
-        <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 lg:gap-6">
-          {items.map((product, i) => (
-            <ProductCard key={product.id} product={product} index={i} />
-          ))}
-        </div>
-      )}
-    </div>
-  );
+      </div>
+    );
+  }
 }

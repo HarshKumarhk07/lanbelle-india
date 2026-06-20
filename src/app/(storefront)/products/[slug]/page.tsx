@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -7,6 +8,7 @@ import { ProductCard } from "@/components/product/product-card";
 import { ProductReviews } from "@/components/product/product-reviews";
 import { RecentlyViewed } from "@/components/product/recently-viewed";
 import { getProductDetail, getRelated } from "@/services/catalog.service";
+import { ProductGridSkeleton } from "@/components/product/product-skeleton";
 import { siteConfig } from "@/lib/site-config";
 import { formatPrice } from "@/lib/utils";
 
@@ -103,30 +105,71 @@ export default async function ProductPage({ params }: Props) {
         reviewCount={product.reviewCount}
       />
 
-      {related.length > 0 && (
+      <Suspense fallback={
         <section className="mt-20">
           <div className="flex items-end justify-between">
             <h2 className="font-serif text-2xl font-semibold">
               You may also like
             </h2>
-            <Link
-              href={`/shop?category=${product.categorySlug}`}
-              className="text-sm font-medium text-primary hover:underline"
-            >
-              View more
-            </Link>
           </div>
-          <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
-            {related.map((p, i) => (
-              <ProductCard key={p.id} product={p} index={i} />
-            ))}
-          </div>
+          <ProductGridSkeleton limit={4} className="mt-6" />
         </section>
-      )}
+      }>
+        <RelatedProductsSection slug={slug} categorySlug={product.categorySlug} />
+      </Suspense>
 
       <RecentlyViewed excludeId={product.id} />
 
       <p className="sr-only">Starting at {formatPrice(product.price)}</p>
     </div>
   );
+}
+
+async function RelatedProductsSection({
+  slug,
+  categorySlug,
+}: {
+  slug: string;
+  categorySlug: string;
+}) {
+  try {
+    const related = await getRelated(slug, categorySlug);
+    if (related.length === 0) return null;
+
+    return (
+      <section className="mt-20">
+        <div className="flex items-end justify-between">
+          <h2 className="font-serif text-2xl font-semibold">
+            You may also like
+          </h2>
+          <Link
+            href={`/shop?category=${categorySlug}`}
+            className="text-sm font-medium text-primary hover:underline"
+          >
+            View more
+          </Link>
+        </div>
+        <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
+          {related.map((p, i) => (
+            <ProductCard key={p.id} product={p} index={i} />
+          ))}
+        </div>
+      </section>
+    );
+  } catch (error) {
+    return (
+      <section className="mt-20">
+        <div className="flex items-end justify-between">
+          <h2 className="font-serif text-2xl font-semibold">
+            You may also like
+          </h2>
+        </div>
+        <div className="mt-6 text-center py-4">
+          <p className="text-sm text-destructive font-medium">
+            Failed to load related products.
+          </p>
+        </div>
+      </section>
+    );
+  }
 }

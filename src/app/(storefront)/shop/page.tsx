@@ -54,65 +54,96 @@ export default async function ShopPage({
   const sp = await searchParams;
   const params = parseParams(sp);
 
-  const [{ items, pagination }, categories, brands] = await Promise.all([
-    getShopProducts(params),
-    getAllCategories(),
-    getAllBrands(),
-  ]);
+  try {
+    const [{ items, pagination }, categories, brands] = await Promise.all([
+      getShopProducts(params),
+      getAllCategories(),
+      getAllBrands(),
+    ]);
 
-  return (
-    <div className="container-px mx-auto max-w-7xl py-12">
-      <header className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
-          The collection
-        </p>
-        <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">
-          Shop all skincare
-        </h1>
-        <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
-          Authentic Korean beauty, imported directly from South Korea in
-          original sealed packaging.
-        </p>
-      </header>
+    return (
+      <div className="container-px mx-auto max-w-7xl py-12">
+        <header className="mb-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            The collection
+          </p>
+          <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">
+            Shop all skincare
+          </h1>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+            Authentic Korean beauty, imported directly from South Korea in
+            original sealed packaging.
+          </p>
+        </header>
 
-      <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
-        <div className="space-y-4">
-          <ShopSidebar categories={categories} brands={brands} />
-        </div>
+        <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
+          <div className="space-y-4">
+            <ShopSidebar categories={categories} brands={brands} />
+          </div>
 
-        <div>
-          <ShopToolbar total={pagination.total} />
+          <div>
+            <ShopToolbar total={pagination.total} />
 
-          {items.length === 0 ? (
-            <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
-              <div className="grid size-16 place-items-center rounded-full bg-accent/60 text-primary">
-                <SearchX className="size-7" />
+            {items.length === 0 ? (
+              <div className="mt-16 flex flex-col items-center justify-center gap-4 text-center">
+                <div className="grid size-16 place-items-center rounded-full bg-accent/60 text-primary">
+                  <SearchX className="size-7" />
+                </div>
+                <div>
+                  <p className="font-medium">No products found</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Try adjusting your filters or search terms.
+                  </p>
+                </div>
+                <Button asChild variant="outline">
+                  <Link href="/shop">Reset filters</Link>
+                </Button>
               </div>
-              <div>
-                <p className="font-medium">No products found</p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  Try adjusting your filters or search terms.
-                </p>
-              </div>
-              <Button asChild variant="outline">
-                <Link href="/shop">Reset filters</Link>
-              </Button>
-            </div>
-          ) : (
-            <>
-              <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-6">
-                {items.map((product, i) => (
-                  <ProductCard key={product.id} product={product} index={i} />
-                ))}
-              </div>
-              <ShopPagination
-                page={pagination.page}
-                totalPages={pagination.totalPages}
-              />
-            </>
-          )}
+            ) : (
+              <>
+                <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-3 lg:gap-6">
+                  {items.map((product, i) => (
+                    <ProductCard key={product.id} product={product} index={i} />
+                  ))}
+                </div>
+                <ShopPagination
+                  page={pagination.page}
+                  totalPages={pagination.totalPages}
+                />
+              </>
+            )}
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } catch (error) {
+    return (
+      <div className="container-px mx-auto max-w-7xl py-12">
+        <header className="mb-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+            The collection
+          </p>
+          <h1 className="mt-2 font-serif text-4xl font-semibold tracking-tight">
+            Shop all skincare
+          </h1>
+          <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+            Authentic Korean beauty, imported directly from South Korea in
+            original sealed packaging.
+          </p>
+        </header>
+
+        <div className="grid gap-8 lg:grid-cols-[260px_1fr]">
+          <div className="space-y-4">
+            <ShopSidebar categories={[]} brands={[]} />
+          </div>
+
+          <div className="text-center py-16">
+            <p className="text-sm text-destructive font-medium">
+              Failed to load products. Please try again later.
+            </p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
